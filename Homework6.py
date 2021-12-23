@@ -11,16 +11,13 @@ class Algoritm:
 
     def metod(self):
         self.c = 0
+        self.x = 0
         while self.c != 1:
-            self.chisla = self.numbers[-1]
+            self.x = self.x - 1
+            self.chisla = self.numbers[self.x]
             self.chisla = int(self.chisla)
             for i in self.numbers:
-                if self.desired_sum - (i + self.chisla) == 1:
-                    self.numbers2 = [k for k in self.numbers]
-                    self.numbers.remove(i)
-                    if i == self.numbers[-1]:
-                        self.numbers = self.numbers + self.numbers2
-                elif self.desired_sum - (i + self.chisla) == 0:
+                if self.desired_sum - (i + self.chisla) == 0:
                     return f'{self.numbers.index(i)},{self.numbers.index(self.chisla)}'
-algoritm = Algoritm(numbers=[2,7,11,15], desired_sum=17)
+algoritm = Algoritm(numbers=[2, 7, 11, 15], desired_sum=26)
 print(algoritm.metod())
